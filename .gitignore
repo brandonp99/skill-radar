@@ -1,0 +1,7 @@
+# Written by Claude Code beside the mod on every load; regenerated, never committed
+.claude-plugin/types/
+
+node_modules/
+.mcpb-cache/
+*.log
+.DS_Store

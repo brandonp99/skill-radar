@@ -1,0 +1,86 @@
+{
+  "name": "skill-radar",
+  "version": "0.1.0",
+  "description": "A pane listing every slash command and skill you have installed, grouped and re-ranked live by what you are working on. Press a row to drop it into the prompt with its arguments as placeholders.",
+  "author": {
+    "name": "Brandon",
+    "url": "https://github.com/brandonp99"
+  },
+  "homepage": "https://github.com/brandonp99/skill-radar",
+  "repository": "https://github.com/brandonp99/skill-radar",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-code-mod",
+    "claude-code-plugin",
+    "skills",
+    "commands",
+    "discovery",
+    "tui"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "openOnStart": {
+      "title": "Open on start",
+      "description": "Open the pane when a session starts (Claude Code only seats an unasked pane from 144 columns; /radar opens it at any width)",
+      "type": "boolean",
+      "default": true
+    },
+    "includeBuiltins": {
+      "title": "Include built-ins",
+      "description": "List Claude Code's own commands (/compact, /clear, ...) as well as yours. Toggle in the pane with b.",
+      "type": "boolean",
+      "default": false
+    },
+    "groupBy": {
+      "title": "Group by",
+      "description": "plugin: one group per plugin, plus Your commands and MCP. source: Plugins, Your commands, MCP, Built-in. flat: one ranked list.",
+      "type": "string",
+      "options": ["plugin", "source", "flat"],
+      "default": "plugin"
+    },
+    "rankMode": {
+      "title": "Ranking",
+      "description": "heuristic: free, instant, keyword and domain overlap only. hybrid: the heuristic plus one small model call after each turn that re-ranks the top of the list (uses your plan or API key).",
+      "type": "string",
+      "options": ["hybrid", "heuristic"],
+      "default": "hybrid"
+    },
+    "rankModel": {
+      "title": "Ranking model",
+      "description": "Model alias or id for the hybrid re-rank, e.g. haiku",
+      "type": "string",
+      "default": "haiku"
+    },
+    "maxRows": {
+      "title": "Rows shown",
+      "description": "How many commands the pane lists before folding the rest (toggle with a to show all)",
+      "type": "number",
+      "default": 30
+    },
+    "usedPenalty": {
+      "title": "Used penalty",
+      "description": "How far a command drops after it has been used this turn or last, 0 to 1 (0.3 drops it about a third)",
+      "type": "number",
+      "default": 0.3
+    },
+    "nudge": {
+      "title": "Nudge Claude",
+      "description": "On each prompt, tell Claude which of your skills look relevant (text only Claude reads). This is the setting that makes Claude reach for skills on its own.",
+      "type": "boolean",
+      "default": false
+    },
+    "suggest": {
+      "title": "Suggest after turns",
+      "description": "After each turn, propose the top command as the dim Tab-to-accept suggestion in the prompt box",
+      "type": "boolean",
+      "default": false
+    },
+    "band": {
+      "title": "Band above prompt",
+      "description": "Also show the top three as 1/2/3 buttons above the prompt. A digit typed alone into an empty prompt presses one.",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

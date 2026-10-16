@@ -1,0 +1,4 @@
+{
+  "description": "Skill Radar: a live, ranked pane of your slash commands and skills",
+  "modules": ["./register.ts"]
+}

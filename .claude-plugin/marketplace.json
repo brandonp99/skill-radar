@@ -1,0 +1,17 @@
+{
+  "name": "skill-radar",
+  "metadata": {
+    "description": "Skill Radar: every slash command and skill you have installed, in a pane, re-ranked live by what you are working on. Press one to drop it into the prompt."
+  },
+  "owner": {
+    "name": "Brandon",
+    "url": "https://github.com/brandonp99"
+  },
+  "plugins": [
+    {
+      "name": "skill-radar",
+      "source": "./",
+      "description": "A live, ranked pane of your commands and skills; press a row to fill the prompt with it and its argument placeholders."
+    }
+  ]
+}
